@@ -17,9 +17,9 @@ LoudnessMeterAudioProcessor::LoudnessMeterAudioProcessor()
                   .withOutput ("Output",    juce::AudioChannelSet::stereo(), true))
 #endif
 {
-    addParameter (targetIntegratedLoudness = new juce::AudioParameterFloat ("targetIntegratedLoudness", "Integrated", juce::NormalisableRange<float>(-50.0f, 0.0f, 1.0f), -23.0f));
-    addParameter (targetMaximumShortTermLoudness = new juce::AudioParameterFloat ("targetMaximumShortTermLoudness", "Max. short term", juce::NormalisableRange<float>(-50.0f, 0.0f, 1.0f), -18.0f));
-    addParameter (targetMaximumTruePeakLevel = new juce::AudioParameterFloat ("targetMaximumTruePeakLevel", "Max. true peak", juce::NormalisableRange<float>(-50.0f, 6.0f, 1.0f),  -1.0f));
+    addParameter (targetIntegratedLoudness = new juce::AudioParameterFloat ({"targetIntegratedLoudness", 1}, "Integrated", juce::NormalisableRange<float>(-50.0f, 0.0f, 1.0f), -23.0f));
+    addParameter (targetMaximumShortTermLoudness = new juce::AudioParameterFloat ({"targetMaximumShortTermLoudness", 1}, "Max. short term", juce::NormalisableRange<float>(-50.0f, 0.0f, 1.0f), -18.0f));
+    addParameter (targetMaximumTruePeakLevel = new juce::AudioParameterFloat ({"targetMaximumTruePeakLevel", 1}, "Max. true peak", juce::NormalisableRange<float>(-50.0f, 6.0f, 1.0f),  -1.0f));
 }
 
 LoudnessMeterAudioProcessor::~LoudnessMeterAudioProcessor()
